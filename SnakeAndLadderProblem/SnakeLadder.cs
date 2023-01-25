@@ -33,7 +33,7 @@ namespace SnakeAndLadderProblem
             }
             else if (option == snake)
             {
-                playerPosition = playerPosition + roll;
+                playerPosition = playerPosition - roll;
                 Console.WriteLine("With snake player moves {0} steps back and now is on {1} position ",roll,playerPosition);
             }
             else
