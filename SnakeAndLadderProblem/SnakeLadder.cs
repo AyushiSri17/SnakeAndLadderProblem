@@ -36,6 +36,16 @@ namespace SnakeAndLadderProblem
                         case Ladder:                
                             playerPosition = playerPosition + roll;
                             Console.WriteLine("With ladder player moves {0} steps ahead and now on {1} position ", roll, playerPosition);
+                            if(playerPosition>100)
+                            {
+                                Console.WriteLine("Player needs to stay on its previous position only");
+                                playerPosition = playerPosition - roll;
+                                Console.WriteLine("Player is still on its previous position that is {0} position", playerPosition);
+                            }
+                            else if(playerPosition==100)
+                            {
+                                Console.WriteLine("Player won");
+                            }
                             break;
                         case Snake:                
                             playerPosition = playerPosition - roll;
@@ -46,11 +56,12 @@ namespace SnakeAndLadderProblem
                             break;
                     }
                 }
-                else
+                else if(playerPosition<0)
                 {
                     Console.WriteLine("though player goes into negative position then player needs to play from start position again");
                     playerPosition = start;
                 }
+               
             }
         }
     }
