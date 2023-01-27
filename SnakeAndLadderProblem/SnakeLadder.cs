@@ -14,6 +14,7 @@ namespace SnakeAndLadderProblem
             int playerPosition = 0;
             int start = 0;
             Console.WriteLine("Start Position:" + start);
+            int dieCount=0;
 
             while (playerPosition < 100)
             {
@@ -61,8 +62,9 @@ namespace SnakeAndLadderProblem
                     Console.WriteLine("though player goes into negative position then player needs to play from start position again");
                     playerPosition = start;
                 }
-               
+                dieCount++;   
             }
+            Console.WriteLine("\n Total number of times die rolled is: "+dieCount );
         }
     }
 }
